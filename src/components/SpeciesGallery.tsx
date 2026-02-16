@@ -9,7 +9,7 @@ export const Card = React.memo(
     hovered,
     setHovered,
   }: {
-    card: any;
+    card: { title: string; src: string };
     index: number;
     hovered: number | null;
     setHovered: React.Dispatch<React.SetStateAction<number | null>>;
@@ -43,7 +43,7 @@ export const Card = React.memo(
 
 Card.displayName = "Card";
 
-export function FocusCards({ cards }: { cards: any[] }) {
+export function FocusCards({ cards }: { cards: { title: string; src: string }[] }) {
   const [hovered, setHovered] = useState<number | null>(null);
 
   return (
